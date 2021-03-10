@@ -1,0 +1,6 @@
+curl -H "Range: bytes=0-5000" http://localhost/file1.txt -v -o aaa
+
+curl -H "Range: bytes=0-5000" http://localhost:80/file1.txt --next -H "Range: bytes=5001-10000" http://localhost:81/file1.txt -v >> file1.txt
+
+
+curl -H "Range: bytes=0-5000" http://localhost:80/file1.txt --next -H "Range: bytes=5001-10000" http://localhost:81/file1.txt -v >> file1.txt

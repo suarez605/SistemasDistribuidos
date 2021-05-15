@@ -1,9 +1,0 @@
-HTTP/1.1 200 OK
-Date: Fri, 05 Mar 2021 19:34:31 GMT
-Server: Apache/2.4.46 (Unix)
-Last-Modified: Thu, 04 Mar 2021 07:12:33 GMT
-ETag: "2710-5bcb0b0fa9b56"
-Accept-Ranges: bytes
-Content-Length: 10000
-Content-Type: text/plain
-

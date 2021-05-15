@@ -2,12 +2,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "diccionario.h"
+#include "cola.h"
 
 struct persona {
     char *nombre;
     int edad;
     // ....
 };
+
+struct mensaje {
+	int tipoOperacion;
+    char *cola;
+    char *cuerpo;
+};
+
+/*
+int crearCola(struct diccionario *d, char * nombreCola){
+	struct cola *cola;
+	cola = cola_create();
+    if (dic_put(d, nombreCola, cola) < 0){
+        fprintf(stderr, "Error, ya existe una cola con ese nombre.\n");
+		return -1;
+	}
+	return 0;
+}
+*/
+
+/*void imprime_cola(char *c, void *v) {
+    struct cola *p = v;
+    printf("COLA\n");
+}
+*/
 
 void libera_persona(char *c, void *v) {
     // libera la clave reservada por la opción %m de scanf
@@ -55,10 +80,18 @@ void imprime_persona(char *c, void *v) {
     struct persona *p = v;
     printf("nombre %s edad %d\n", c, p->edad);
 }
+
+
 int main(int argc, char *argv[]) {
-    struct diccionario *dic;
+    /*struct diccionario *dic;
 
     dic = dic_create();
+
+
+    int a;
+    a = crearCola(dic, "COLA1");
+    printf("Contenido del diccionario:\n");
+    dic_visit(dic, imprime_cola);
     lee_persona(dic);
     lee_persona(dic);
     lee_persona(dic);
@@ -68,6 +101,6 @@ int main(int argc, char *argv[]) {
     printf("Contenido del diccionario:\n");
     dic_visit(dic, imprime_persona);
     datos_persona(dic);
-    dic_destroy(dic, libera_persona);
+    dic_destroy(dic, libera_persona);*/
     return 0;
 }

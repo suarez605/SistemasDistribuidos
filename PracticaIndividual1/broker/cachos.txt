@@ -1,0 +1,23 @@
+	struct cola *cola;
+	cola = cola_create();
+	char nombrecola1[100] = "COLA1";
+	char mensaje1[100] = "HOLA A TODOS. ";
+	insertarMensaje(cola, mensaje1);
+	/*printf("Contenido de la cola1:\n");
+ 	cola_visit(cola, imprime_string);*/
+
+	dic_put(dic, nombrecola1, cola);
+	printf("Contenido del diccionario:\n");
+    dic_visit(dic, imprime_cola);
+
+
+	struct cola *cola2;
+	cola2 = cola_create();
+	char nombrecola2[100] = "COLA2";
+	char mensaje2[100] = "ADIOS A TODOS. ";
+	insertarMensaje(cola2, mensaje2);
+
+	dic_put(dic, nombrecola2, cola2);
+	printf("Contenido del diccionario:\n");
+
+    dic_visit(dic, imprime_cola);
